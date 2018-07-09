@@ -12,23 +12,26 @@
       transition:.5s;
     }
     #faq {
+
       background-color:black;
       color:white;
-      height:35px;
+      height:2px;
       transition: margin-left .5s;
       display:none;
     }
     #menu {
-      padding:10px;
+      top:0px;
       width:100%;
-      transition: margin-left .5s;
+      height:60px;
       padding: 16px;
+      position:fixed;
+      z-index: 1;
     }
     #box {
       height: 100%;
       width: 0;
       position: fixed;
-      z-index: 1;
+      z-index: 2;
       top: 0;
       left: 0;
       background-color: #111;
@@ -52,21 +55,24 @@
     }
     #body {
       transition: margin-left .5s;
+      top:60px;
     }
     #image {
       display:none;
       margin-left:0px;
-      height:4%;
+      height:auto;
+      width:auto;
       margin:25px;
       float:left;
       margin-right:0px;
     }
     #image2 {
-      width:80%;
-      height:70%;
+      height:auto;
+      width:70%;
     }
     .faq {
       display:none;
+      height:60px;
       margin-top:15px;
       margin-right:15px;
       color:white;
@@ -93,8 +99,8 @@
     }
     .boximage {
       margin-top:40px;
-      height:3%;
-      width:45%;
+      height:auto;
+      width:auto;
       margin-bottom:40px;
     }
     .buttons {
@@ -116,8 +122,8 @@
     @media only screen and (max-width:1200px) and (min-width:600px) {
       .boximage {
         margin-bottom:40px;
-        height:3%;
-        width:40%;
+        height:auto;
+        width:auto;
         margin-top:40px;
       }
       #image2 {
@@ -222,7 +228,7 @@
       </div>
       <div id = "body">
         <div>
-          <div style = "z-index:0">
+          <div style = "margin-top:60px;z-index:0">
             <img style = "width:100%;" src = "646677862.jpg">
             <div class='row buttonsparent'>
                 <div class='col-7 buttons'>CREER UN COMPTE PROFESSEUR GRATUIT</div>
