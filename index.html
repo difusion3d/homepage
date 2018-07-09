@@ -4,23 +4,370 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">        
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+    <style>
+    #form {
+      display:none;
+    }
+    body {
+      transition:.5s;
+    }
+    #faq {
+      background-color:black;
+      color:white;
+      height:35px;
+      transition: margin-left .5s;
+      display:none;
+    }
+    #menu {
+      padding:10px;
+      width:100%;
+      transition: margin-left .5s;
+      padding: 16px;
+    }
+    #box {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 10px;
+    }
+    #box a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      display: block;
+      transition: 0.3s;
+      color:white;
+      text-decoration:underline;
+    }
+
+    #box a:hover {
+      cursor:pointer;
+      color: #ff0015;
+    }
+    #body {
+      transition: margin-left .5s;
+    }
+    #image {
+      display:none;
+      margin-left:0px;
+      height:4%;
+      margin:25px;
+      float:left;
+      margin-right:0px;
+    }
+    #image2 {
+      width:80%;
+      height:70%;
+    }
+    .faq {
+      display:none;
+      margin-top:15px;
+      margin-right:15px;
+      color:white;
+      float:right;
+      font-size:14px;
+    }
+    #bar {
+      color:white;
+      display:none;
+      margin-left:5px;
+      margin-top:5px;
+    }
+    #bar2 {
+      color:white;
+      display:none;
+      margin-left:5px;
+      margin-top:5px;
+    }
+    #link {
+      color:white;
+      float:right;
+      margin-right:20px;
+      margin-top:5px;
+    }
+    .boximage {
+      margin-top:40px;
+      height:3%;
+      width:45%;
+      margin-bottom:40px;
+    }
+    .buttons {
+      font-size:18px;
+      background-color:black;
+      color:white;
+    }
+    .buttonsparent {
+      background-color:black;
+      color:black;
+      text-align:center;
+      padding:30px;
+    }
+    .bodyimagediv {
+      text-align:center;
+      background-color:black;
+      padding:100px;
+    }
+    @media only screen and (max-width:1200px) and (min-width:600px) {
+      .boximage {
+        margin-bottom:40px;
+        height:3%;
+        width:40%;
+        margin-top:40px;
+      }
+      #image2 {
+      width:100%;
+      height:60%;
+      }
+      .bodyimagediv {
+      text-align:center;
+      background-color:black;
+      padding:40px;
+      }
+      .form-control {
+        max-width:80%;
+      }
+      .buttons {
+      font-size:14px;
+      background-color:black;
+      color:white;
+      }
+      .buttonsparent {
+      background-color:black;
+      color:black;
+      text-align:center;
+      padding:20px;
+      }
+    }
+    @media only screen and (max-width:600px) and (min-width:0px) {
+      .boximage {
+        margin-bottom:40px;
+        height:3%;
+        width:70%;
+        margin-top:40px;
+      }
+      .form-control {
+        max-width:80%;
+      }
+      .bodyimagediv {
+      text-align:center;
+
+      background-color:black;
+      padding:10px;
+      }
+      .buttons {
+      font-size:10px;
+      background-color:black;
+      color:white;
+      }
+      .buttonsparent {
+      background-color:black;
+      color:black;
+      text-align:center;
+      padding:10px;
+      }
+      #image2 {
+        height:30%;
+      }
+    }
+    
+    </style>
   </head>
   <body>
     <div>
-      <nav id = "menu"  class = "navbar navbar-light bg-light">
-        <a style = "margin-left:5px;margin-top:10px;"><i class = "fa fa-2x fa-bars"></i></a> 
+      <nav id = "faq">
+        <a id = "link" href = "#">FAQ's</a>
       </nav>
-      <nav id = "menu2" style = "margin-left:0%;display:none;" class = "navbar navbar-light bg-light">
-        <a style = "margin-left:5px;margin-top:10px;"><i class = "fa fa-2x fa-bars"></i></a> 
+      <nav id = "menu" class = "navbar navbar-light bg-light">
+        <a style = 'vertical-align: top;' id = 'bar'><i class = "fa fa-2x fa-bars"></i></a> 
+        <img id = 'image'  src = './logo.png'>
+        <form id = 'form' style = "margin-left:0px;float:left;" class="form-inline my-2 ">
+            <input class="form-control mr-sm-2" type="username" placeholder="Username" aria-label="Username">
+            <input class="form-control mr-sm-2" type="password" placeholder="Password" aria-label="Username">
+            <button class = "btn btn-primary"style="background-color:#ff0015;border-color:#ff0015">Login</button>
+        </form>
       </nav>
-      <div class = "row">
-        <div class = "col-4" id = "box" style="height:100%;display:none;background-color: grey;"></div>
-        <div id = "body" class = "col-8">
-          <h1>Hello world whatsup</h1>
+      <div id = "box">
+        <a id = 'bar2' style = "margin-top:0px;float:right;"><i class = "fa fa-times"></i></a>
+        <div style = "margin-left:10px;">
+          <img class = "boximage" id = "boximage" src = './logo2.png'>
+          <div class = "">
+            <form id = "boxform">
+              <div class = "row">
+                <div style = "margin-bottom:10px;" class = "col-xl-4">
+                  <input class="form-control mr-sm-2" type="username" placeholder="Username" aria-label="Username">
+                </div>
+                <div style = "margin-bottom:10px;"class = "col-xl-4">
+                  <input class="form-control mr-sm-2" type="password" placeholder="Password" aria-label="Username">
+                </div>
+                <div class = "col-xl-4">
+                  <button style = "background-color:#ff0015;border-color:#ff0015;" class="btn btn-primary">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div style = "display:none;" id = "navfooter" class = "row">
+            <a style = "margin-bottom:50px;" class = "col-12"><i class="fa fa-2x fa-angle-right custom" ></i>   FAQ's</a>
+            <a class = "col-2"><i style = "color:white;" class=" fa fa-2x fa-facebook-square custom"></i></a>
+            <a class = "col-2"><i style = "color:white;"class="fa fa-2x fa-instagram custom" ></i></a>
+            <a class = "col-2">	<i style = "color:white;"class = "fa fa-2x fa-twitter-square "></i></a>
+            <a class = "col-2"><i style = "color:white;"class="fa fa-2x fa-youtube-square custom" ></i></a>
+          </div>
+        </div>
+      </div>
+      <div id = "body">
+        <div>
+          <div style = "z-index:0">
+            <img style = "width:100%;" src = "646677862.jpg">
+            <div class='row buttonsparent'>
+                <div class='col-7 buttons'>CREER UN COMPTE PROFESSEUR GRATUIT</div>
+                <div class='col-5 buttons'>ACCES LIMITE SANS COMPTE</div>
+            </div>
+            <p style = "margin:40px;font-size:30px;text-align:center;">L'ESPACE LANGUES EN UN COUP D'OEIL</p>
+
+            <div style = "margin:auto;" class="row container">
+              <div  style = "margin-bottom:30px;text-align:center;"class="col-lg-4">
+                <img src = "./icon_cours.png">
+                <p style="font-size:22px;text-decoration: underlinne;">+20 pre-designed courses</p>
+              </div>
+              <div  style = "text-align:center;"class="col-lg-4">
+                <img src = "./icon_exercices.png">
+                <p style="font-size:22px;text-decoration: underlinne;">Manuel numerique personnalisable</p>
+
+              </div>
+              <div  style = "text-align:center;"class="col-lg-4">
+                <img src = "./icon_fiches.png">
+                <p style="font-size:22px;text-decoration: underlinne;">Acces hors-ligne et en ligne. Multi Plateforme</p>
+
+              </div>
+              <div  style = "text-align:center;"class="col-lg-4">
+                <img src = "./icon_multi_device.png">
+                <p style="font-size:22px;text-decoration: underlinne;">Exercises interactif autocorrectifs</p>
+
+              </div>
+              <div  style = "text-align:center;"class="col-lg-4">
+                <img src = "./icon_cours.png">
+                <p style="font-size:22px;text-decoration: underlinne;">Autograding et gestion de classes / groupes</p>
+
+              </div>
+              <div  style = "text-align:center;"class="col-lg-4">
+                <img src = "./icon_cours.png">
+                <p style="font-size:22px;text-decoration: underlinne;">Fiches d'actu pretes a l'emploi</p>
+
+              </div>
+            </div>
+            <br>
+            <div style = "background-color:#2172AA;">
+              <br>
+              <p style = "margin-top:30px;font-size:30px;text-align:center;color:white;">Lorem Ipsum</p>
+              <div style="margin:auto;" class = "container row">
+                <div class = "col-lg-6" style = "padding:20px;">
+                  <div class="card" style="margin-bottom:30px;margin-top:30px;">
+                    <p style ="text-align:center;font-size:30px;">Teachers</p>
+                    <div class="card-body">
+                      <ul>
+                        <li class="card-text">This is some sample text in order to show the style of the page</li>
+                        <li class="card-text">This is some more sample text in order to show some more styles of the page</li>
+                      </ul>
+                      <div style="margin-top:30px;text-align:center;">
+                        <div class="buttons" style="padding:8px;border-radius:5px;color:white;background-color:black;border-color:black">CREER UN COMPTE PROFESSEUR GRATUIT</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class='col-lg-6' style = "padding:20px;">
+                  <div class="card" style="margin-bottom:30px;margin-top:30px;">
+                    <p style ="text-align:center;font-size:30px;">Students</p>
+                    <div class="card-body">
+                      <ul>
+                        <li class="card-text">This is some sample text in order to show the style of the page</li>
+                        <li class="card-text">This is some more sample text in order to show some more styles of the page</li>
+                      </ul>
+                      <div style="margin-top:30px;text-align:center">
+                        <div class="buttons" style="padding:8px;border-radius:5px;color:white;background-color:black;border-color:black">ACCES LIMITE SANS COMPTE</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='bodyimagediv'>
+              <img id="image2"src="./video.jpg">
+            </div>
+            <div style="padding-top:20px;background-color:#ECECEC;">
+                <p style = "margin-top:50px;font-size:30px;text-align:center;color:black;">Lorem Ipsum</p>
+                <div class="container row" style="margin:auto;">
+                <div style='margin:auto;margin-top:30px;margin-bottom:80px;' class='col-lg-12 row'>
+                  <div style='font-size:20px;padding:13px;height:60px;background-color:white;border-top:4px solid #ff0015;border-right:1px solid black;text-align:center;color:#ff0015;' class='col-lg-4'>PACKS NUMERIQUES</div>
+                  <div style='font-size:20px;padding:13px;height:60px;background-color:	#DADBD6;border-top:4px solid black;border-right:1px solid black;text-align:center;color:black;' class='col-lg-4'>RESOURCES</div>
+                  <div style='font-size:20px;padding:13px;height:60px;background-color:	#DADBD6;border-top:4px solid black;text-align:center;color:black' class='col-lg-4'>GESTION DE CLASSE</div>                  
+                  <div style='background-color:white;' class='col-lg-12'>
+                    <div class = 'row'>
+                      <div style='padding:50px;' class='col-lg-4'>
+                        <ul>
+                          <li>This is filler text that serves as a test and nothing but a test this is the first set of filler text</li>
+                          <li>This is filler text that serves as a test and nothing but a test this is the first set of filler text</li>
+                        </ul>
+                      </div>
+                      <div style='padding:50px;'class='col-lg-4'>
+                        <ul>
+                          <li>This is filler text that serves as a test and nothing but a test this is the first set of filler text</li>
+                          <li>This is filler text that serves as a test and nothing but a test this is the first set of filler text</li>
+                        </ul>
+                      </div>
+                      <div style='padding:50px;'class='col-lg-4'>
+                        <ul>
+                          <li>This is filler text that serves as a test and nothing but a test this is the first set of filler text</li>
+                          <li>This is filler text that serves as a test and nothing but a test this is the first set of filler text</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>                
+              </div>
+            </div>
+            <div style='background-color:	#A8A7A3; padding:20px;'>
+              <p style = "margin-bottom:30px;margin-top:20px;font-size:35px;text-align:center;color:white;">TESTIMONIALS</p>
+              <div class='container row' style='margin:auto;'>
+                <div style='text-align:center;' class='col-lg-4'>
+                  <img src='./wwalex-brisbey-472100-unsplash.jpg' style="width:150px;height:150px;border-radius:100px;">
+                  <p style='color:white;'>Joanne Rowling</p>
+                  <p style='color:white;'>"Quisque dolor nunc, tempus eu porta vitae, cursus sed eros. Quisque at ipsum eu diam tincidunt tincidunt"</p>
+                </div>
+                <div style='text-align:center;' class='col-lg-4'>
+                  <img src='./wwandre-adjahoe-474307-unsplash.jpg' style="width:150px;height:150px;border-radius:100px;">
+                  <p style='color:white;'>Virginia Wolf</p>
+                  <p style='color:white;'>"Quisque dolor nunc, tempus eu porta vitae, cursus sed eros. Quisque at ipsum eu diam tincidunt tincidunt"</p>
+                </div>
+                <div style='text-align:center;' class='col-lg-4'>
+                  <img src='./wwdaniil-kuzelev-492953-unsplash.jpg' style="width:150px;height:150px;border-radius:100px;">
+                  <p style='color:white;'>Jane Austin Esteban</p>
+                  <p style='color:white;'>"Quisque dolor nunc, tempus eu porta vitae, cursus sed eros. Quisque at ipsum eu diam tincidunt tincidunt"</p>
+                </div>
+              </div>
+            </div>
+            <div class='row buttonsparent'>
+              <div class='col-7 buttons'>CREER UN COMPTE PROFESSEUR GRATUIT</div>
+              <div class='col-5 buttons'>ACCES LIMITE SANS COMPTE</div>
+            </div>
+            <div class='row' style='text-align:center;padding:20px;background-color:white'>
+                <div class='col-lg-4'><img src='./dysle.png' style="width:auto;height:auto;"></div>
+                <div class='col-lg-4'><img src='./appstore.png' style="width:auto;height:auto;"></div>
+                <div class='col-lg-4'><img src='./editionsnew.png'  style="width:auto;height:auto;"></div>
+              </div>
+            <div class='row' style='padding:5px;background-color:black;'>
+              <div class='col-12'><p style='margin-top:7px;color:white'>Mentions Legales | © Editions Maison des Langues 2017</p></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
+    
     <script
       src="https://code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -30,13 +377,60 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
     <script>
-      $(document).ready( function() {
-        $('#menu').click( () => {$('#menu').hide();$('#menu2').show();$('#body').attr('style','margin-left:35%').attr('style','z-index:0');$('#box').fadeIn("slow")})
-        $('#menu2').click( () => {$('#menu').show();$('#menu2').hide();$('#box').fadeOut("slow")})
-        
-        
+      var navopen = false
+      if ($(document).width() > 1200) {
+        $("#image").show();
+        $("#form").show();
+        $("#faq").show();
+      }
+      else {
+        $("#bar").show();
+        $("#menu").removeClass("navbar-light bg-light").addClass("navbar-dark bg-dark")
+      }
+      openNav = () => { 
+        navopen = true
+        $("#boximage").show();
+        $("#boxform").show();
+        $("#navfooter").show();
+        $('body').attr('style','background-color:rgba(0,0,0,0.4)')
+        if($(document).width() <= 1200 && $(document).width() >= 600)
+          $("#box").attr('style','width:40%;')
+        else
+          $("#box").attr('style','width:70%;')
+      }
+      closeNav = () => { 
+        navopen = false
+        $("#boximage").hide();
+        $("#boxform").hide();
+        $("#navfooter").hide();
+        $("#box").attr('style','width:0%;')
+        $('body').attr('style','')
+
+      }
+      $(document).ready( () => {
+        $("#bar").click(() => {
+          openNav();
+        })
+        $("#bar2").click(() => {
+          closeNav();
+        })
+        $(window).resize(() => {
+          if ($(document).width() < 1200 && !navopen) {
+            $("#bar").show();
+            $('#image').hide();
+            $('#form').hide();
+            $("#faq").hide();
+            $("#menu").removeClass("navbar-light bg-light").addClass("navbar-dark bg-dark")
+          }
+          else if ($(document).width() >= 1200 && !navopen) {
+            $("#bar").hide();
+            $("#image").show();
+            $("#form").show();
+            $("#faq").show();
+            $("#menu").addClass("navbar-light bg-light").removeClass("navbar-dark bg-dark")
+          }
+        })
       })
-       
     </script>
   </body>
 </html>
